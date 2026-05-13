@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+	div {
+        padding: 16px;
+        margin: 16px;
+}
+	</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Welcome to Coffee Management System!</h1>
+
+<select id="name">
+	<option value=""></option>
+	<option value="Cappuccino">Cappuccino</option>
+	<option value="Latte">Latte</option>
+	<option value="Mocha">Mocha</option>
+	<option value="Americano">Americano</option>
+	<option value="Macchiato">Macchiato</option>
+	<option value="Frappuccino">Frappuccino</option>
+	<option value="Espresso">Espresso</option>
+</select>
+
+<button onclick="getOrder()">Get Order</button>
+<p id="order"></p>
+</div>
+
+</body>
+
+<script type="text/javascript">
+	function getOrder() {
+		const name = document.getElementById('name').value;
+
+		if(name === '') {
+		document.getElementById('order').innerHTML = "<br>Please select all option.";
+		return;
+	}
+	fetch(`http://localhost:5000/coffee/${name}`)
+		.then(response => response.json())
+		.then(data => {
+			let coffees = '';
+			coffees += '<br>' + data.name + '<br>' + data.size + '<br>' + data.quantity + '<br>' + data.price + '<br>'
+			document.getElementById('order').innerHTML = coffees;
+		});
+	}
+</script>
+</html>
