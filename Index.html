@@ -42,7 +42,7 @@
 		document.getElementById('order').innerHTML = "<br>Please select all option.";
 		return;
 	}
-	fetch(`http://localhost:5000/coffee/${name}`)
+	fetch(`https://exceptional-coffee.onrender.com/coffee/${name}`)
 		.then(response => response.json())
 		.then(data => {
 			let coffees = '';
