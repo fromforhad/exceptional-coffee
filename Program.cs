@@ -79,4 +79,4 @@ app.MapDelete("/coffee/delete/{id}", (int id, CoffeeDb db) =>
     return Results.NoContent();
 });
 
-app.Run("http://localhost:5000");
+app.Run();
