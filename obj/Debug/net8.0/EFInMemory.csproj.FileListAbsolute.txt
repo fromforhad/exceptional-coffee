@@ -149,3 +149,4 @@
 /run/media/ex900/Media/Archieved/VS Code/EFInMemory/obj/Debug/net8.0/EFInMemory.pdb
 /run/media/ex900/Media/Archieved/VS Code/EFInMemory/obj/Debug/net8.0/EFInMemory.genruntimeconfig.cache
 /run/media/ex900/Media/Archieved/VS Code/EFInMemory/obj/Debug/net8.0/ref/EFInMemory.dll
+/run/media/ex900/Media/Archieved/VS Code/EFInMemory/bin/Debug/net8.0/Coffees.json

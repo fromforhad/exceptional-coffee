@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 using CoffeeData;
 using CoffeeModel;
 
@@ -31,13 +32,18 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+var jsonPath = Path.GetFullPath("Coffees.json");
+var json = File.ReadAllText(jsonPath);
+var coffees = JsonSerializer.Deserialize<List<Coffee>>(json) ?? [];
+
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<CoffeeDb>();
-    db.Database.Migrate();
+    db.Database.EnsureDeleted();
+    db.Database.EnsureCreated();
+    db.Coffees.AddRange(coffees);
     db.SaveChanges();
 }
-
 // ----------------------------- CRUD ----------------------------- //
 // Retrieve all coffees
 app.MapGet("/coffee", (CoffeeDb db) =>

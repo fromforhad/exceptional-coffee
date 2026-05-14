@@ -1,0 +1,51 @@
+[
+{
+"Id": 1,
+"Name": "Cappuccino",
+"Size": "M",
+"Quantity": 20,
+"Price": 4.25
+},
+{
+"Id": 2,
+"Name": "Latte",
+"Size": "L",
+"Quantity": 15,
+"Price": 4.75
+},
+{
+"Id": 3,
+"Name": "Mocha",
+"Size": "S",
+"Quantity": 12,
+"Price": 3.5
+},
+{
+"Id": 4,
+"Name": "Americano",
+"Size": "M",
+"Quantity": 18,
+"Price": 3.25
+},
+{
+"Id": 5,
+"Name": "Macchiato",
+"Size": "L",
+"Quantity": 8,
+"Price": 4
+},
+{
+"Id": 8,
+"Name": "Frappuccino",
+"Size": "L",
+"Quantity": 9,
+"Price": 5
+},
+{
+"Id": 10,
+"Name": "Espresso",
+"Size": "S",
+"Quantity": 10,
+"Price": 2.5
+}
+]
