@@ -31,6 +31,13 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<CoffeeDb>();
+    db.Database.Migrate();
+    db.SaveChanges();
+}
+
 // ----------------------------- CRUD ----------------------------- //
 // Retrieve all coffees
 app.MapGet("/coffee", (CoffeeDb db) =>
